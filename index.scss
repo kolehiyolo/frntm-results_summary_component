@@ -1,0 +1,65 @@
+html {
+    body {
+        min-height: 100vh;
+
+        &,
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    }
+}
+
+* {
+    // border: dashed 1px red;
+}
+
+html {
+    body {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .card {
+            display: flex;
+            flex-direction: row;
+            border-radius: 25px;
+            width: 700px;
+
+            .upper {
+                background-image: linear-gradient(rgb(102, 75, 210), rgb(47, 44, 235));
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+                border-radius: 25px;
+                color: white;
+                width: 50%;
+
+
+                .score_bubble {
+                    background-image: linear-gradient(rgb(76, 36, 203), rgba(70, 52, 238, 0));
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    .score {
+                        font-size: 30px;
+                    }
+
+                }
+            }
+
+            .lower {
+                width: 50%;
+            }
+        }
+    }
+}
