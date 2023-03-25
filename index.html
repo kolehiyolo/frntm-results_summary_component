@@ -15,6 +15,10 @@
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
+
+<script src="https://kit.fontawesome.com/c2e8dbdee0.js" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <body>
   <div class="card">
@@ -23,6 +27,7 @@
       <div class="score_bubble">
         <p class="score">76</p>
         <p class="of_100">of 100</p>
+        <div class="ripple ripple-default"></div>
       </div>
       <div class="score_interpretation">
         <p class="short">Great</p>
@@ -34,36 +39,52 @@
         <p>Summary</p>
         <ul>
           <li class="reaction">
-            <div class="label">Reaction</div>
+            <div class="label">
+              <!-- <i class="fa-regular fa-bolt"></i> -->
+              <i class="fa-solid fa-bolt"></i>
+              <p>Reaction</p>
+            </div>
             <div class="score">
               <p class="result">80</p>
-              <p class="/ 100"> / 100</p>
+              <p class="slash_100"> / 100</p>
             </div>
           </li>
           <li class="memory">
-            <div class="label">Memory</div>
+            <div class="label">
+              <!-- <i class="fa-regular fa-brain"></i> -->
+              <i class="fa-solid fa-brain"></i>
+              <p>Memory</p>
+            </div>
             <div class="score">
               <p class="result">92</p>
-              <p class="/ 100"> / 100</p>
+              <p class="slash_100"> / 100</p>
             </div>
           </li>
           <li class="verbal">
-            <div class="label">Verbal</div>
+            <div class="label">
+              <!-- <i class="fa-regular fa-comment-minus"></i> -->
+              <i class="fa-solid fa-comment"></i>
+              <p>Verbal</p>
+              </div>
             <div class="score">
               <p class="result">61</p>
-              <p class="/ 100"> / 100</p>
+              <p class="slash_100"> / 100</p>
             </div>
           </li>
           <li class="visual">
-            <div class="label">Visual</div>
+            <div class="label">
+              <!-- <i class="fa-regular fa-eye"></i> -->
+              <i class="fa-solid fa-eye"></i>
+              <p>Visual</p>
+            </div>
             <div class="score">
               <p class="result">72</p>
-              <p class="/ 100"> / 100</p>
+              <p class="slash_100"> / 100</p>
             </div>
           </li>
         </ul>
       </div>
-      <button class="continue" type="button">
+      <button class="btn-continue" type="button" onclick="randomize()">
         Continue
       </button>
     </div>
@@ -72,5 +93,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+
+  <script src="index.js"></script>
 </body>
 </html>

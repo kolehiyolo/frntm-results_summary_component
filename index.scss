@@ -1,65 +1,236 @@
-html {
-    body {
-        min-height: 100vh;
-
-        &,
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-    }
-}
-
-* {
-    // border: dashed 1px red;
-}
-
-html {
-    body {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        .card {
-            display: flex;
-            flex-direction: row;
-            border-radius: 25px;
-            width: 700px;
-
-            .upper {
-                background-image: linear-gradient(rgb(102, 75, 210), rgb(47, 44, 235));
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                padding: 20px;
-                border-radius: 25px;
-                color: white;
-                width: 50%;
+  @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
-                .score_bubble {
-                    background-image: linear-gradient(rgb(76, 36, 203), rgba(70, 52, 238, 0));
-                    width: 200px;
-                    height: 200px;
-                    border-radius: 50%;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
+  html {
+      body {
+          min-height: 100vh;
+          //   font-family: monospace;
+          font-family: 'Hanken Grotesk', sans-serif;
 
-                    .score {
-                        font-size: 30px;
-                    }
+          &,
+          * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+          }
+      }
+  }
 
-                }
-            }
+  * {
+      //   border: dashed 1px red;
+  }
 
-            .lower {
-                width: 50%;
-            }
-        }
-    }
-}
+  html {
+      body {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          .card {
+              display: flex;
+              flex-direction: row;
+              border-radius: 25px;
+              width: 600px;
+              background-color: white;
+              margin: 50px;
+              -webkit-box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.24);
+              -moz-box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.24);
+              box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.24);
+
+              .upper {
+                  // background-image: linear-gradient(rgb(102, 75, 210), rgb(47, 44, 235));
+                  background-image: linear-gradient(hsl(0, 100%, 67%), hsl(-70, 81%, 54%));
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  padding: 10px 40px;
+                  border-radius: 25px;
+                  color: white;
+                  width: 50%;
+                  gap: 20px;
+                  justify-content: center;
+
+                  h1 {
+                      font-size: 16px;
+                      // color: hsl(221, 100%, 96%);
+                      color: hsl(241, 100%, 89%);
+                      color: white;
+                  }
+
+                  .score_bubble {
+                      background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(70, 52, 238, 0));
+                    //   background-image: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+                      width: 150px;
+                      height: 150px;
+                      border-radius: 50%;
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                      justify-content: center;
+                      position: relative;
+
+                      .score {
+                          font-size: 45px;
+                          font-weight: 800;
+                      }
+
+
+                      .of_100 {
+                          font-size: 12px;
+                          color: hsl(241, 100%, 89%);
+                          color: white;
+                      }
+
+                      .ripple {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        border-radius: 50%;
+                        transition: all 1s;
+
+                        &-default {
+                            width: 0px;
+                            height: 0px;
+                            border: solid 5px rgba(255, 255, 255, 0.342);
+                            transition: 0;
+                            opacity: 0;
+                        }
+
+                        &-start {
+                            width: 0px;
+                            height: 0px;
+                            border: solid 5px rgba(255, 255, 255, 0.342);
+                        }
+
+                        &-expanded {
+                            width: 150px;
+                            height: 150px;
+                            border: solid 0px rgba(255, 255, 255, 0.342);
+                            opacity: 1;
+                        }
+                      }
+                  }
+
+                  .score_interpretation {
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                      justify-content: center;
+                      text-align: center;
+                      gap: 20px;
+
+                      .short {
+                          font-size: 25px;
+                      }
+
+                      .long {
+                          color: hsl(241, 100%, 89%);
+                          color: white;
+                          font-size: 12px;
+                      }
+                  }
+              }
+
+              .lower {
+                  width: 50%;
+                  border-radius: 0 25px 25px 0;
+                  padding: 30px;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 20px;
+
+                  .summary {
+                      display: flex;
+                      flex-direction: column;
+                      gap: 20px;
+
+                      p {
+                          font-weight: 700;
+                      }
+
+                      ul {
+                          display: flex;
+                          flex-direction: column;
+                          justify-content: space-between;
+                          gap: 20px;
+
+                          li {
+                              list-style-type: none;
+                              display: flex;
+                              flex-direction: row;
+                              justify-content: space-between;
+                              padding: 10px;
+                              border-radius: 10px;
+
+                              .label {
+                                  font-weight: 700;
+                                  display: flex;
+                                  flex-direction: row;
+                                  justify-content: space-between;
+                                  align-items: center;
+                                  gap: 10px;
+
+                                  i {
+                                      width: 20px;
+                                      display: flex;
+                                      flex-direction: row;
+                                      justify-content: center;
+                                      align-items: center;
+                                  }
+                              }
+
+                              .score {
+                                  display: flex;
+                                  flex-direction: row;
+                                  gap: 5px;
+
+                                  .result {
+                                      color: black;
+                                  }
+
+                                  .slash_100 {
+                                      color: rgb(88, 88, 88);
+                                  }
+                              }
+
+                              &.reaction {
+                                  color: hsl(0, 100%, 67%);
+                                  background-color: hsla(0, 100%, 67%, 0.05);
+
+                              }
+
+                              &.memory {
+                                  color: hsl(39, 100%, 56%);
+                                  background-color: hsla(39, 100%, 56%, 0.05);
+
+                              }
+
+                              &.verbal {
+                                  color: hsl(166, 100%, 37%);
+                                  background-color: hsla(166, 100%, 37%, 0.05);
+
+                              }
+
+                              &.visual {
+                                  color: hsl(234, 85%, 45%);
+                                  background-color: hsla(234, 85%, 45%, 0.1);
+                              }
+                          }
+                      }
+                  }
+
+                  .btn-continue {
+                      width: 100%;
+                      background-color: rgb(48, 59, 89);
+                      color: white;
+                      border-radius: 100px;
+                      padding: 10px;
+                      cursor: pointer;
+                  }
+              }
+          }
+      }
+  }
