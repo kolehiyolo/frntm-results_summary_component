@@ -20,6 +20,18 @@
       //   border: dashed 1px red;
   }
 
+  :root {
+    --sol-red: hsl(0, 100%, 67%);
+    --sol-yellow: hsl(39, 100%, 56%);
+    --sol-green: hsl(166, 100%, 37%);
+    --sol-blue: hsl(234, 85%, 45%);
+
+    --tra-red: hsla(0, 100%, 67%, 0.15);
+    --tra-yellow: hsla(39, 100%, 56%, 0.15);
+    --tra-green: hsla(166, 100%, 37%, 0.15);
+    --tra-blue: hsla(234, 85%, 45%, 0.1);
+  }
+
   html {
       body {
           position: relative;
@@ -41,7 +53,7 @@
 
               .upper {
                   // background-image: linear-gradient(rgb(102, 75, 210), rgb(47, 44, 235));
-                  background-image: linear-gradient(hsl(0, 100%, 67%), hsl(-70, 81%, 54%));
+                  background-image: linear-gradient(hsl(0, 100%, 67%), hsl(-20, 81%, 54%));
                   display: flex;
                   flex-direction: column;
                   align-items: center;
@@ -164,6 +176,23 @@
                               justify-content: space-between;
                               padding: 10px;
                               border-radius: 10px;
+                              position: relative;
+                              z-index: 1;
+
+                              .fluid {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                height: 100%;
+                                width: 0px;
+
+                                border-radius: 7px 0px 0px 7px;
+                                z-index: 0;
+                              }
+
+                              .label, .score {
+                                z-index: 1;
+                              }
 
                               .label {
                                   font-weight: 700;
@@ -197,26 +226,39 @@
                               }
 
                               &.reaction {
-                                  color: hsl(0, 100%, 67%);
-                                  background-color: hsla(0, 100%, 67%, 0.05);
+                                  color: var(--sol-red);
+                                  border: 3px solid var(--tra-red);
 
+                                  .fluid {
+                                    background-color: var(--tra-red);
+                                  }
                               }
 
                               &.memory {
-                                  color: hsl(39, 100%, 56%);
-                                  background-color: hsla(39, 100%, 56%, 0.05);
+                                  color: var(--sol-yellow);
+                                  border: 3px solid var(--tra-yellow);
 
+                                  .fluid {
+                                    background-color: var(--tra-yellow);
+                                  }
                               }
 
                               &.verbal {
-                                  color: hsl(166, 100%, 37%);
-                                  background-color: hsla(166, 100%, 37%, 0.05);
+                                  color: var(--sol-green);
+                                  border: 3px solid var(--tra-green);
 
+                                  .fluid {
+                                    background-color: var(--tra-green);
+                                  }
                               }
 
                               &.visual {
-                                  color: hsl(234, 85%, 45%);
-                                  background-color: hsla(234, 85%, 45%, 0.1);
+                                  color: var(--sol-blue);
+                                  border: 3px solid var(--tra-blue);
+
+                                  .fluid {
+                                    background-color: var(--tra-blue);
+                                  }
                               }
                           }
                       }
